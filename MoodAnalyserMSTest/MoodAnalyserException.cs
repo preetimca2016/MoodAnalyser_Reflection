@@ -13,6 +13,7 @@ namespace MoodAnalyserMSTest
         {
             NO_SUCH_CLASS,
             NO_SUCH_METHOD,
+            NO_SUCH_CONSTRUCTOR,
             EMPTY_MESSAGE,
             NULL_MESSAGE,
         }
