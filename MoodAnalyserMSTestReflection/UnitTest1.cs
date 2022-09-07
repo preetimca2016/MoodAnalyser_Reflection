@@ -69,5 +69,35 @@ namespace MoodAnalyserMSTest
             object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalysr.Mood", "Mood");
             expected.Equals(obj);
         }
+        /// TC-5.2  Given MoodAnalyse Class Name When Improper Should Throw Exception
+        
+        [Test]
+        public void MoodAnalyserClassName_WhenImproper_UsingParametrizedConstructor_ShouldThrowExcpetion()
+        {
+            string expected = "Class not found";
+            try
+            {
+                object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserDay12.Mood", "MoodAnalyser");
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual(expected, exception.Message);
+            }
+        }
+        /// TC-5.3  Given MoodAnalyse Class Name When Constructor is Improper Should Throw Exception
+       
+        [Test]
+        public void MoodAnalyserClassName_WhenConstructorIsImproper_UsingParametrizedConstructor_ShouldThrowExcpetion()
+        {
+            string expected = "Constcructor not found";
+            try
+            {
+                object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserDay12.MoodAnalyser", "Mood");
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual(expected, exception.Message);
+            }
+        } 
     }
 }
