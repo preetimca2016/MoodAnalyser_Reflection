@@ -61,5 +61,13 @@ namespace MoodAnalyserMSTest
                 Assert.AreEqual(expected, exception.Message);
             }
         }
+        //TC-5.1 GivenMosdAnalyseClassName_ShouldReturnMoodAnalyseObject_UsingParameterizedConstructor
+        [Test]
+        public void GivenMosdAnalyseClassName_ShouldReturnMoodAnalyseObject_UsingParameterizedConstructor()
+        {
+            object expected = new MoodAnalyser("HAPPY");
+            object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalysr.Mood", "Mood");
+            expected.Equals(obj);
+        }
     }
 }
