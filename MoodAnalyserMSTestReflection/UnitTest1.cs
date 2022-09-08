@@ -77,7 +77,7 @@ namespace MoodAnalyserMSTest
             string expected = "Class not found";
             try
             {
-                object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserDay12.Mood", "MoodAnalyser");
+                object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyser.Mood", "MoodAnalyser");
             }
             catch (MoodAnalyserCustomException exception)
             {
@@ -92,7 +92,7 @@ namespace MoodAnalyserMSTest
             string expected = "Constcructor not found";
             try
             {
-                object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserDay12.MoodAnalyser", "Mood");
+                object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyser.MoodAnalyser", "Mood");
             }
             catch (MoodAnalyserCustomException exception)
             {
@@ -123,7 +123,7 @@ namespace MoodAnalyserMSTest
                 Assert.AreEqual(expected, exception.Message);
             }
         }        
-        /// TC-6.2  Given Happy Message Using Using Reflector When ImProper Method Should Return Hppy Name Should Throw Exception
+        /// TC-6.3  Set Field When Improper Should Throw Exception with No Such Field
         
         [Test]
         public void GivenHppyMessge_WhenIMProperMethod_Should_ThrowException()
